@@ -1,0 +1,80 @@
+<div *ngIf="!pais; else divPais"
+class="alert alert-info">
+Waiting a moment please..
+</div>
+
+<ng-template #divPais>
+<div class="row">
+<div class="col-12">
+   <h1>Country: <small class="text-primary"> {{pais.name}} </small> </h1> 
+   <hr>
+</div>
+</div>
+<div class="row">
+    <div class="col-4">
+        <h5>FLAG</h5>
+        <img [src]="pais.flag" class="img-thumbnail"/>
+    </div>
+    <div class="col">
+        <h5>INFORMATION</h5>
+        <ul class="list-group">
+            <li class="list-group-item">
+                <strong>Native Name: </strong> {{pais.nativeName }}
+            </li>
+            <li class="list-group-item">
+                <strong>Capital: </strong> {{pais.capital}}
+            </li>
+            <li class="list-group-item">
+                <strong>Population: </strong> {{pais.population | number}}
+            </li>
+          
+            <li class="list-group-item">
+                <strong>Region: </strong> {{pais.region}}
+            </li>
+            
+            <br>
+        </ul>
+    </div>
+
+<hr>
+<h5 class="text-center">TRANSLATIONS</h5>
+<div class="row" style="font-weight: bold;">
+<div class="col-6 p-3">
+    <ul>
+    <li>
+        <span>Spanish: </span>
+        <span class="badge bg-dark mr-1">{{pais.translations.es}} </span>
+    </li>
+    <li class="mt-3">
+        <span>French: </span>
+        <span class="badge bg-dark mr-1">{{pais.translations.fr}} </span>
+    </li>
+    <li class="mt-3">
+        <span>Italian:  </span>
+        <span class="badge bg-dark mr-1">{{pais.translations.it}} </span>
+    </li>
+    </ul>
+</div>
+<div class="col-6 p-3">
+    <ul>
+    <li>
+        <span>Portuguese: </span>
+        <span class="badge bg-dark mr-1" >  {{pais.translations.pt}} </span>
+    </li>
+    <li class="mt-3">
+        <span >Japanese:  </span>
+        <span class="badge bg-dark mr-1">{{pais.translations.ja}} </span>
+    </li>
+    <li class="mt-3">
+        <span>German: </span>
+        <span class="badge bg-dark mr-1"> {{pais.translations.de}} </span>
+    </li>
+    </ul>
+</div>
+</div>
+
+</div>
+<!-- <pre>
+{{pais | json}}
+</pre> -->
+</ng-template>
